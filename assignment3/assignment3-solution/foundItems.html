@@ -1,0 +1,8 @@
+<div style="margin-top: 100px;">
+  <ol>
+    <li ng-repeat="item in list.items">
+      {{ item.name }} &nbsp;&nbsp; ¥{{item.price_large}} &nbsp;&nbsp; {{item.description}}
+      <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+    </li>
+  </ol>
+</div>
