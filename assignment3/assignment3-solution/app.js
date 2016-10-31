@@ -33,15 +33,17 @@
 
     controller.search = function() {
       //alert('a');
-      var promise = MenuSearchService.getMatchedMenuItems(controller.searchItem);
-      promise
-      .then(function (response) {
-        controller.found = response;
-        console.log(response);
-      })
-      .catch(function (errorResponse) {
-        console.log(errorResponse.message);
-      });
+      if(controller.searchItem != ""){
+        var promise = MenuSearchService.getMatchedMenuItems(controller.searchItem);
+        promise
+        .then(function (response) {
+          controller.found = response;
+          console.log(response);
+        })
+        .catch(function (errorResponse) {
+          console.log(errorResponse.message);
+        });
+      }
     };
 
     controller.removeItem = function(itemIndex) {
